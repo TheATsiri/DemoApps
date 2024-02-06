@@ -17,11 +17,14 @@ namespace InstatiatedClassDemoApp
             {
                 Console.Write("Entre person's first name:");
                 firstName = Console.ReadLine();
+                Console.Write("Entre person's last name:");
+                string lasttName = Console.ReadLine();
                 if (firstName.ToLower() != "exit")
                 {
                     PersonModel person = new PersonModel()
                     {
-                        FirstName = firstName
+                        FirstName = firstName,
+                        LastName = lasttName
                     };
                     output.Add(person);
                 }
@@ -29,6 +32,14 @@ namespace InstatiatedClassDemoApp
             } while (firstName.ToLower() != "exit");
 
             return output;
+        }
+
+        public static void ShowData(List<PersonModel> listOfPeople)
+        {
+            foreach (var person in listOfPeople)
+            {
+                Console.WriteLine($"{person.FirstName} - {person.LastName} ");
+            }
         }
     }
 }

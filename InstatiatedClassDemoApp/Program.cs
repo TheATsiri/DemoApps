@@ -5,10 +5,7 @@
         static void Main(string[] args)
         {
             var people = Helper.SeedData();
-            foreach (var person in people)
-            {
-                Console.WriteLine(person.FirstName);
-            }
+            Helper.ShowData(people);
 
             Console.ReadLine();
         }
