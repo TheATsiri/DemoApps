@@ -38,7 +38,7 @@ namespace InstatiatedClassDemoApp
         {
             foreach (var person in listOfPeople)
             {
-                Console.WriteLine($"{person.FirstName} - {person.LastName} ");
+                ProcessPerson.GreetingPerson(person);
             }
         }
     }
