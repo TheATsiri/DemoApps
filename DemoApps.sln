@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionMethodsDemoApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericsDemoApp", "GenericsDemoApp\GenericsDemoApp.csproj", "{A77CC639-9290-4334-A60B-004C7E42571B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CnCDemoApp", "CnCDemoApp\CnCDemoApp.csproj", "{FD7CB0FE-8169-44AA-A31F-006A9F81BAFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CnCDemoApp", "CnCDemoApp\CnCDemoApp.csproj", "{FD7CB0FE-8169-44AA-A31F-006A9F81BAFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorMessageWallApp", "RazorMessageWallApp\RazorMessageWallApp.csproj", "{F9F22D76-B851-4624-B87B-2ABFC1D6BF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FD7CB0FE-8169-44AA-A31F-006A9F81BAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD7CB0FE-8169-44AA-A31F-006A9F81BAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD7CB0FE-8169-44AA-A31F-006A9F81BAFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F22D76-B851-4624-B87B-2ABFC1D6BF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F22D76-B851-4624-B87B-2ABFC1D6BF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F22D76-B851-4624-B87B-2ABFC1D6BF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F22D76-B851-4624-B87B-2ABFC1D6BF38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
