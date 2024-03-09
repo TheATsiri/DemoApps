@@ -21,9 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorMessageWallApp", "Razo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCMessageWallApp", "MVCMessageWallApp\MVCMessageWallApp.csproj", "{8D6207B5-ADCC-4AF7-B058-947CB35333E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCMessageWallWithIdentifyApp", "MVCMessageWallWithIdentifyApp\MVCMessageWallWithIdentifyApp.csproj", "{9F011873-39AF-4902-9883-3C0624659DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCMessageWallWithIdentifyApp", "MVCMessageWallWithIdentifyApp\MVCMessageWallWithIdentifyApp.csproj", "{9F011873-39AF-4902-9883-3C0624659DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazozServerMessageWallApp", "BlazozServerMessageWallApp\BlazozServerMessageWallApp.csproj", "{B50A3C88-BE77-413C-8EBB-FCF1EB8620DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazozServerMessageWallApp", "BlazozServerMessageWallApp\BlazozServerMessageWallApp.csproj", "{B50A3C88-BE77-413C-8EBB-FCF1EB8620DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleWasmApp", "SimpleWasmApp\SimpleWasmApp.csproj", "{39801260-79D7-4272-97EF-9C356DDD337B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageWallAPIDemoApp", "MessageWallAPIDemoApp\MessageWallAPIDemoApp.csproj", "{28D12ABA-472B-4E78-9D33-A4DD4C7ED73F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{B50A3C88-BE77-413C-8EBB-FCF1EB8620DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B50A3C88-BE77-413C-8EBB-FCF1EB8620DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B50A3C88-BE77-413C-8EBB-FCF1EB8620DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39801260-79D7-4272-97EF-9C356DDD337B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39801260-79D7-4272-97EF-9C356DDD337B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39801260-79D7-4272-97EF-9C356DDD337B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39801260-79D7-4272-97EF-9C356DDD337B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D12ABA-472B-4E78-9D33-A4DD4C7ED73F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D12ABA-472B-4E78-9D33-A4DD4C7ED73F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D12ABA-472B-4E78-9D33-A4DD4C7ED73F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D12ABA-472B-4E78-9D33-A4DD4C7ED73F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
