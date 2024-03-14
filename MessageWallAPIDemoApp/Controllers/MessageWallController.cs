@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MessageWallAPIDemoApp.Models;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,15 +9,29 @@ namespace MessageWallAPIDemoApp.Controllers
     [ApiController]
     public class MessageWallController : ControllerBase
     {
-        // GET: api/<MessageWallController>
+        private ILogger<MessageWallController> _logger;
+
+        public MessageWallController(ILogger<MessageWallController> logger)
+        {
+            _logger = logger;
+        }
+
+
+
+        // GET: api/Messagewall?message=Test&id=4
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> Get(string message = "", int id = 0)
         {
             List<string> output = new List<string>
             {
                 "Hello",
                 "How are you?"
             };
+            if (string.IsNullOrWhiteSpace(message) == false)
+            {
+                output.Add(message);
+            }
+
             return output;
         }
 
@@ -29,8 +44,9 @@ namespace MessageWallAPIDemoApp.Controllers
 
         // POST api/<MessageWallController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] MessageModel messsage)
         {
+            _logger.LogInformation("Our message was {Message}", messsage.Message);
         }
 
         // PUT api/<MessageWallController>/5
