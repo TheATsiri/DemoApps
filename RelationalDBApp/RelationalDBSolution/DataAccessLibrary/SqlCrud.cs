@@ -1,6 +1,7 @@
 ﻿using DataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,6 @@ namespace DataAccessLibrary
         {
             _connectionString = connectionString;
         }
-
         public List<BasicContactModel> GetAllContacts()
         {
             string sql = "Select Id,FirstName,LastName from dbo.Contacts";
@@ -24,7 +24,6 @@ namespace DataAccessLibrary
             return db.LoadData<BasicContactModel, dynamic>(sql, new { }, _connectionString);
 
         }
-
         public FullContactModel GetFullContact(int id)
         {
             string sql = "Select Id,FirstName,LastName from dbo.Contacts where Id=@Id";
@@ -49,6 +48,57 @@ namespace DataAccessLibrary
 
 
             return output;
+        }
+
+        public void CreateContact(FullContactModel contact)
+        {
+            // Save the basic contact
+            string sql = "insert into dbo.Contacts (FirstName,LastName) values (@FirstName,@LastName)";
+            db.SaveData(sql,
+                        new { contact.BasicInfo.FirstName, contact.BasicInfo.LastName, },
+                        _connectionString);
+
+            // Get the ID number of the created basic contact
+            sql = "select Id form dbo.Contacts where FirstName=@FirstName and LastName=@LastName;";
+            int contactId = db.LoadData<IdLookUpModel, dynamic>(sql,
+                                                              new { contact.BasicInfo.FirstName, contact.BasicInfo.LastName },
+                                                              _connectionString).First().Id;
+
+            foreach (var phoneNumber in contact.PhoneNumbers)
+            {
+                if (phoneNumber.Id == 0)
+                {
+                    sql = "insert into dbo.PhoneNumbers (PhoneNumber) values (@PhoneNumber)";
+                    db.SaveData(sql, new { phoneNumber.PhoneNumber }, _connectionString);
+
+                    phoneNumber.Id = db.LoadData<IdLookUpModel, dynamic>(sql,
+                                                                      new { phoneNumber.PhoneNumber },
+                                                                      _connectionString).First().Id;
+
+                }
+
+                sql = "insert into dbo.ContactPhoneNumbers (ContactId,PhoneNumberId) values (@ContactId,@PhoneNumberId)";
+                db.SaveData(sql,
+                            new { ContactId = contactId, PhoneNumberId = phoneNumber.Id },
+                            _connectionString);
+
+            }
+            foreach (var email in contact.EmailAddresses)
+            {
+                if (email.Id == 0)
+                {
+                    sql = "insert into dbo.EmailAddresses (EmailAddress) values (@EmailAddress)";
+                    db.SaveData(sql, new { email.EmailAddress }, _connectionString);
+
+                    email.Id = db.LoadData<IdLookUpModel, dynamic>(sql,
+                                                                   new { email.EmailAddress },
+                                                                   _connectionString).First().Id;
+                }
+
+
+            }
+
+
         }
     }
 }
