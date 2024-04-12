@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAc
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQLContactsDB", "SQLContactsDB\SQLContactsDB.sqlproj", "{215E2D9C-7609-403B-9707-E2C0EA53D901}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqliteUI", "SqliteUI\SqliteUI.csproj", "{296F3E57-AE2A-44E6-A23F-B7C9C09823AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySqlUI", "MySqlUI\MySqlUI.csproj", "{CD1E6E45-4B21-4866-A5AF-49D9A717C461}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{215E2D9C-7609-403B-9707-E2C0EA53D901}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{215E2D9C-7609-403B-9707-E2C0EA53D901}.Release|Any CPU.Build.0 = Release|Any CPU
 		{215E2D9C-7609-403B-9707-E2C0EA53D901}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{296F3E57-AE2A-44E6-A23F-B7C9C09823AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296F3E57-AE2A-44E6-A23F-B7C9C09823AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296F3E57-AE2A-44E6-A23F-B7C9C09823AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296F3E57-AE2A-44E6-A23F-B7C9C09823AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD1E6E45-4B21-4866-A5AF-49D9A717C461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1E6E45-4B21-4866-A5AF-49D9A717C461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1E6E45-4B21-4866-A5AF-49D9A717C461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1E6E45-4B21-4866-A5AF-49D9A717C461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
