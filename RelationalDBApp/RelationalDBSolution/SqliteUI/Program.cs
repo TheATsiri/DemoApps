@@ -14,9 +14,10 @@ namespace SqliteUI
 
             //ReadContact(sql, 13);      // Read one Contact
 
-            //CreateNewContact(sql);
+            CreateNewContact(sql);
 
-            UpdateContact(sql);
+            //UpdateContact(sql);
+
             //ReadAllContacts(sql);
 
             //RemovePhoneNumberFromContact(sql, 1, 1);
@@ -47,9 +48,9 @@ namespace SqliteUI
             };
 
             user.EmailAddresses.Add(new EmailAddressModel { EmailAddress = "nope@nope.com" });
-            user.EmailAddresses.Add(new EmailAddressModel { Id = 1, EmailAddress = "at@at.com" });
+            user.EmailAddresses.Add(new EmailAddressModel { Id = 1, EmailAddress = "at@at.de" });
 
-            user.PhoneNumbers.Add(new PhoneNumberModel { Id = 1, PhoneNumber = "555-1212" });
+            user.PhoneNumbers.Add(new PhoneNumberModel { Id = 1, PhoneNumber = "555-1234" });
             user.PhoneNumbers.Add(new PhoneNumberModel { PhoneNumber = "555-7777" });
 
             sql.CreateContact(user);

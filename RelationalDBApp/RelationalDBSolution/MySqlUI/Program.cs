@@ -10,9 +10,9 @@ namespace MySqlUI
         {
             MySqlCrud sql = new MySqlCrud(GetConnectionString());
 
-            ReadAllContacts(sql);     // Read all Contacts
+            //ReadAllContacts(sql);     // Read all Contacts
 
-            //ReadContact(sql, 13);      // Read one Contact
+            ReadContact(sql, 2);      // Read one Contact
 
             //CreateNewContact(sql);
 
@@ -47,9 +47,9 @@ namespace MySqlUI
             };
 
             user.EmailAddresses.Add(new EmailAddressModel { EmailAddress = "nope@nope.com" });
-            user.EmailAddresses.Add(new EmailAddressModel { Id = 1, EmailAddress = "at@at.com" });
+            user.EmailAddresses.Add(new EmailAddressModel { Id = 1, EmailAddress = "at@at.de" });
 
-            user.PhoneNumbers.Add(new PhoneNumberModel { Id = 1, PhoneNumber = "555-1212" });
+            user.PhoneNumbers.Add(new PhoneNumberModel { Id = 1, PhoneNumber = "555-1234" });
             user.PhoneNumbers.Add(new PhoneNumberModel { PhoneNumber = "555-7777" });
 
             sql.CreateContact(user);

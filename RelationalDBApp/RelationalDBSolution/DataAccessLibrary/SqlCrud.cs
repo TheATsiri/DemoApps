@@ -106,7 +106,7 @@ namespace DataAccessLibrary
         }
         public void UpdateContactName(BasicContactModel contact)
         {
-            string sql = "update Contacts set FirstName=@Firstname, LastName=@LastName where Id=@Id";
+            string sql = "update Contacts set FirstName=@FirstName, LastName=@LastName where Id=@Id";
             db.SaveData(sql, contact, _connectionString);
         }
         public void RemovePhoneNumberFromContact(int contactId, int phoneNumberId)
