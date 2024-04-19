@@ -8,7 +8,7 @@
         Title="SunInfo" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <Button x:Name="loadSunInfoButton" Margin="20" Content="Load Sun Info"/>
+            <Button x:Name="loadSunInfoButton" Margin="20" Content="Load Sun Info" Click="loadSunInfoButton_Click"/>
             <Label  Content="Time of sunrise:"/>
             <TextBlock x:Name="sunriseText" Margin="20"/>
             <Label  Content="Time of sunset:"/>

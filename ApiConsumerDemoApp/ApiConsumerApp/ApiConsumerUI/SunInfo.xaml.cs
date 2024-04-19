@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApiConsumerLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,15 @@ namespace ApiConsumerUI
         public SunInfo()
         {
             InitializeComponent();
+        }
+
+        private async void loadSunInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sunInfo = await SunResultProcessor.LoadSunInformation();
+
+            sunriseText.Text = sunInfo.Sunrise.ToLocalTime().ToShortTimeString();
+            sunsetText.Text = sunInfo.Sunset.ToLocalTime().ToShortTimeString();
+
         }
     }
 }
