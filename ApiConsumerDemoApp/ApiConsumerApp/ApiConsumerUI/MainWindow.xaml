@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ApiConsumerUI"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="previousImageButton" Padding="15" Margin="15" Content="Previous" Click="previousImageButton_Click"/>
+            <Button x:Name="sunInformationButton" Padding="15" Margin="15" Content="Sun Information" Click="sunInformationButton_Click" />
+            <Button x:Name="nextImageButton" Padding="15" Margin="15" Content="Next" Click="nextImageButton_Click"/>
+        </StackPanel>
+
+        <Image Grid.Row="1" x:Name="comicImage" Margin="20"/>
 
     </Grid>
 </Window>

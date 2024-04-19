@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConsumerUI", "ApiConsume
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConsumerLibrary", "ApiConsumerLibrary\ApiConsumerLibrary.csproj", "{2FE96613-C862-4C31-8C10-6FA6D0F71778}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E913FFC-19EB-48A4-ABF1-C099B37929E2}"
+	ProjectSection(SolutionItems) = preProject
+		UrlsInfo.txt = UrlsInfo.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
