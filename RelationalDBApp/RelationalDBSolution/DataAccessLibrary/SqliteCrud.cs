@@ -1,19 +1,18 @@
 ﻿using DataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLibrary
 {
-    public class SqlCrud
+    public class SqliteCrud
     {
         private readonly string _connectionString;
 
-        private SQLDataAccess db = new SQLDataAccess();
-        public SqlCrud(string connectionString)
+        private SqliteDataAccess db = new SqliteDataAccess();
+        public SqliteCrud(string connectionString)
         {
             _connectionString = connectionString;
         }
@@ -87,10 +86,10 @@ namespace DataAccessLibrary
             {
                 if (email.Id == 0)
                 {
-                    sql = "insert into EmailAdrdresses (EmailAddress) values (@EmailAddress)";
+                    sql = "insert into EmailAddresses (EmailAddress) values (@EmailAddress)";
                     db.SaveData(sql, new { email.EmailAddress }, _connectionString);
 
-                    sql = "select Id from EmailAdrdresses where EmailAddress=@EmailAddress; ";
+                    sql = "select Id from EmailAddresses where EmailAddress=@EmailAddress; ";
                     email.Id = db.LoadData<IdLookUpModel, dynamic>(sql,
                                                                    new { email.EmailAddress },
                                                                    _connectionString).First().Id;

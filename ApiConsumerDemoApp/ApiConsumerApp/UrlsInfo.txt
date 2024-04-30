@@ -1,0 +1,12 @@
+1. comic images
+https://xkcd.com/info.0.json  (current comic)
+
+or
+
+https://xkcd.com/614/info.0.json  (comic #614)
+
+2. sunrise sunset 
+
+https://sunrise-sunset.org/api
+
+

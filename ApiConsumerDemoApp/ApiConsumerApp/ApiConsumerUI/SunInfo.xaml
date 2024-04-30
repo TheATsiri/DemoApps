@@ -1,0 +1,18 @@
+﻿<Window x:Class="ApiConsumerUI.SunInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ApiConsumerUI"
+        mc:Ignorable="d"
+        Title="SunInfo" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Button x:Name="loadSunInfoButton" Margin="20" Content="Load Sun Info" Click="loadSunInfoButton_Click"/>
+            <Label  Content="Time of sunrise:"/>
+            <TextBlock x:Name="sunriseText" Margin="20"/>
+            <Label  Content="Time of sunset:"/>
+            <TextBlock x:Name="sunsetText" Margin="20"/>
+        </StackPanel>
+    </Grid>
+</Window>
