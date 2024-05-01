@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_api/add_user.dart';
 import 'package:flutter_web_api/api_handler.dart';
 import 'package:flutter_web_api/edit_page.dart';
+import 'package:flutter_web_api/find_user.dart';
 import 'package:flutter_web_api/model.dart';
 
 class MainPage extends StatefulWidget {
@@ -16,6 +18,11 @@ class _MainPageState extends State<MainPage> {
 
   void getData() async {
     data = await apiHandler.getUserData();
+    setState(() {});
+  }
+
+  void deleteUser(int userId) async {
+    await apiHandler.deleteUser(userId: userId);
     setState(() {});
   }
 
@@ -41,6 +48,42 @@ class _MainPageState extends State<MainPage> {
           onPressed: getData,
           child: const Text('Refresh'),
         ),
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              heroTag: 1,
+              backgroundColor: Colors.teal,
+              foregroundColor: Colors.white,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const FindUser()),
+                  ),
+                );
+              },
+              child: const Icon(Icons.search),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            FloatingActionButton(
+              heroTag: 2,
+              backgroundColor: Colors.teal,
+              foregroundColor: Colors.white,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AddUser(),
+                  ),
+                );
+              },
+              child: const Icon(Icons.add),
+            ),
+          ],
+        ),
         body: Column(
           children: [
             ListView.builder(
@@ -60,6 +103,12 @@ class _MainPageState extends State<MainPage> {
                   leading: Text("${data[index].userId}"),
                   title: Text(data[index].name),
                   subtitle: Text(data[index].address),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.delete_outline),
+                    onPressed: () {
+                      deleteUser(data[index].userId);
+                    },
+                  ),
                 );
               },
             )
