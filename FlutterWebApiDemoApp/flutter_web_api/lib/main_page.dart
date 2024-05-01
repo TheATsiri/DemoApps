@@ -33,6 +33,13 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: Colors.teal,
           foregroundColor: Colors.white,
         ),
+        bottomNavigationBar: MaterialButton(
+          color: Colors.teal,
+          textColor: Colors.white,
+          padding: const EdgeInsets.all(20),
+          onPressed: getData,
+          child: const Text('Refresh'),
+        ),
         body: Column(
           children: [
             ListView.builder(
