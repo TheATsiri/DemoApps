@@ -1,13 +1,13 @@
 class User {
-  final int UserId;
-  final String Name;
-  final String Address;
+  final int userId;
+  final String name;
+  final String address;
 
-  const User({required this.UserId, required this.Name, required this.Address});
+  const User({required this.userId, required this.name, required this.address});
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-      UserId: json['UserId'], Name: json['Name'], Address: json['Address']);
+      userId: json['userId'], name: json['name'], address: json['address']);
 
   Map<String, dynamic> toJson() =>
-      {"UserId": UserId, "Name": Name, "Address": Address};
+      {"userId": userId, "name": name, "address": address};
 }
