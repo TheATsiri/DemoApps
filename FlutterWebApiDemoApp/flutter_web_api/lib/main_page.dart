@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_api/api_handler.dart';
+import 'package:flutter_web_api/edit_page.dart';
 import 'package:flutter_web_api/model.dart';
 
 class MainPage extends StatefulWidget {
@@ -47,6 +48,15 @@ class _MainPageState extends State<MainPage> {
               itemCount: data.length,
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditPage(
+                            user: data[index],
+                          ),
+                        ));
+                  },
                   leading: Text("${data[index].userId}"),
                   title: Text(data[index].name),
                   subtitle: Text(data[index].address),
