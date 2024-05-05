@@ -1,0 +1,99 @@
+﻿@page "/"
+@using UploadFileApp.Data
+@inject IConfiguration config
+
+<PageTitle>Upload Demo App</PageTitle>
+
+<h1>Upload Demo</h1>
+
+
+<EditForm Model="newCustomer" OnValidSubmit="SubmitForm">
+    <div>
+        <label for="firstName">First Name:</label>
+        <InputText id="firstName" class="form-control" @bind-Value="newCustomer.FirstName" />
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <InputText id="lastName" class="form-control" @bind-Value="newCustomer.LastName" />
+    </div>
+    <div>
+        <label for="profilePicture">Profile Picture:</label>
+        <InputFile OnChange="@LoadFiles" class="form-control" accept=".png" />
+    </div>
+    <button class="btn btn-primary mt-3" type="submit">Create Customer</button>
+</EditForm>
+
+
+
+@if (errors.Count > 0)
+{
+    <h2>Errors</h2>
+    <u1 class="text-danger">
+        @foreach (var error in errors)
+        {
+            <li>@error</li>
+        }
+    </u1>
+}
+
+@code {
+    private long maxFileSize = 1024 * 1024 * 3;                     // represents 3MB
+    private int maxAllowedFiles = 3;
+    private List<string> errors = new();
+    private CustomerModel newCustomer = new();
+    private IBrowserFile? file;
+
+    private async Task SubmitForm()
+    {
+        try
+        {
+            string relativePath = await CaptureFile();
+            newCustomer.FileName = relativePath;
+        }
+        catch (Exception ex)
+        {
+
+            errors.Add($"Error: {ex.Message}");
+        }
+    }
+
+    private async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        file = e.File;
+    }
+
+    private async Task<string> CaptureFile()
+    {
+
+        if (file is null)
+        {
+            return "";
+        }
+
+        try
+        {
+            string newFileName = Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(file.Name));
+
+            string path = Path.Combine(config.GetValue<string>("FileStorage")!, "atsiriplis", newFileName);
+
+            string realativePath = Path.Combine("atsiriplis", newFileName);
+
+            Directory.CreateDirectory(Path.Combine(config.GetValue<string>("FileStorage")!, "atsiriplis"));
+
+            await using FileStream fs = new(path, FileMode.Create);
+            await file.OpenReadStream(maxFileSize).CopyToAsync(fs);
+
+            return realativePath;
+        }
+        catch (Exception ex)
+        {
+
+            errors.Add($"File: {file.Name} Error: {ex.Message}");
+            throw;
+        }
+
+
+    }
+
+}
+
