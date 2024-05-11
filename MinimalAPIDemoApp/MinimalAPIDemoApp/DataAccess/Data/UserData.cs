@@ -16,7 +16,7 @@ public class UserData : IUserData
     // CRUD Operations
 
     // C - Create Operation
-    public Task InsertUser(UserModel user) => _db.SaveData("dbo.spUser_Insert", new { user.FirstName, user.LaststName });
+    public Task InsertUser(UserModel user) => _db.SaveData("dbo.spUser_Insert", new { user.FirstName, user.LastName });
     // R - Read Operation by passing an id 
     public async Task<UserModel?> GetUser(int id)
     {
