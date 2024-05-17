@@ -10,4 +10,8 @@
     <ProjectReference Include="..\UploadFileLibrary\UploadFileLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\profileimages\" />
+  </ItemGroup>
+
 </Project>
