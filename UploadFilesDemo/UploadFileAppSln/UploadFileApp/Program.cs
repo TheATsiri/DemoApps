@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using UploadFileApp.Data;
+using UploadFileLibrary;
 
 namespace UploadFileApp
 {
@@ -14,6 +15,7 @@ namespace UploadFileApp
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
             builder.Services.AddSingleton<WeatherForecastService>();
+            builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 
             var app = builder.Build();
 
